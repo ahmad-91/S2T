@@ -1,0 +1,41 @@
+{
+  "commands": [
+    {
+      "name": "Gen SRS from TC",
+      "description": "Generate Software Requirements Specification from Truth Criteria",
+      "command": "Generate SRS document in /requirements/SRS.md based on /truth/TC.vX.md. Ensure all requirements are traceable with derived-from tags.",
+      "category": "requirements"
+    },
+    {
+      "name": "Expand BR from SRS",
+      "description": "Expand Business Requirements from Software Requirements Specification",
+      "command": "Generate Business Requirements document in /requirements/BR.md based on /requirements/SRS.md. Maintain traceability with origin tags.",
+      "category": "requirements"
+    },
+    {
+      "name": "Gen Flows from BR",
+      "description": "Generate User Flows and Process Flows from Business Requirements",
+      "command": "Generate flow diagrams and descriptions in /design/flows/ based on /requirements/BR.md. Include user journeys and process flows.",
+      "category": "design"
+    },
+    {
+      "name": "Gen ERD from Flows + BR",
+      "description": "Generate Entity Relationship Diagram from Flows and Business Requirements",
+      "command": "Generate ERD in /architecture/ERD.md based on /design/flows/ and /requirements/BR.md. Extract entities, relationships, and attributes.",
+      "category": "architecture"
+    },
+    {
+      "name": "Gen API from ERD",
+      "description": "Generate API specifications from Entity Relationship Diagram",
+      "command": "Generate API specifications in /backend/api/ or /architecture/API.md based on /architecture/ERD.md. Design REST/GraphQL endpoints.",
+      "category": "backend"
+    },
+    {
+      "name": "Gen Frontend Component from ComponentContract",
+      "description": "Generate Frontend Component code from Component Contract",
+      "command": "Generate React/React Native component in /frontend/components/ based on Component Contract. Include props, state, and behavior as specified.",
+      "category": "frontend"
+    }
+  ]
+}
+
