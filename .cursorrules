@@ -1,61 +1,23 @@
 # Project Rules and Instructions
 
-## Authoritative Sources
+> **NOTE:** This file is kept for backward compatibility. The authoritative rules are now in `.cursor/rules/` directory.
+> Cursor automatically reads all `.md` files from `.cursor/rules/` directory.
+
+## Quick Reference
+
+- **Authoritative Sources:** See `.cursor/rules/authoritative-sources.md`
+- **Requirements Handling:** See `.cursor/rules/requirements-handling.md`
+- **Metadata Tags:** See `.cursor/rules/metadata-tags.md`
+- **Custom Commands:** See `.cursor/rules/custom-commands.md`
+- **Workflow Guidelines:** See `.cursor/rules/workflow-guidelines.md`
+
+## Summary
 
 When generating code, you MUST treat `/truth/TC.vX.md` as authoritative.
 
-## Requirements Handling
-
 Do not invent requirements; if something is unclear, log it to `/requirements/SRS.ambiguities.md`.
 
-## Metadata Tags
+Respect `origin:` and `derived-from:` tags wherever applicable.
 
-Respect `origin:` and `derived-from:` tags wherever applicable. These tags indicate the source and lineage of requirements, designs, and code artifacts.
-
-## Custom Commands/Macros
-
-The following custom commands are available for this project:
-
-### Gen SRS from TC
-Generate Software Requirements Specification (SRS) from Truth Criteria (TC) documents.
-- Source: `/truth/TC.vX.md`
-- Output: `/requirements/SRS.md`
-- Process: Extract requirements from truth criteria, ensuring all requirements are traceable to TC.
-
-### Expand BR from SRS
-Expand Business Requirements (BR) from Software Requirements Specification (SRS).
-- Source: `/requirements/SRS.md`
-- Output: `/requirements/BR.md`
-- Process: Derive business requirements from technical SRS, maintaining traceability.
-
-### Gen Flows from BR
-Generate User Flows and Process Flows from Business Requirements.
-- Source: `/requirements/BR.md`
-- Output: `/design/flows/`
-- Process: Create flow diagrams and descriptions based on business requirements.
-
-### Gen ERD from Flows + BR
-Generate Entity Relationship Diagram (ERD) from Flows and Business Requirements.
-- Source: `/design/flows/` and `/requirements/BR.md`
-- Output: `/architecture/ERD.md` or `/architecture/ERD.diagram`
-- Process: Extract entities, relationships, and attributes from flows and business requirements.
-
-### Gen API from ERD
-Generate API specifications from Entity Relationship Diagram.
-- Source: `/architecture/ERD.md`
-- Output: `/backend/api/` or `/architecture/API.md`
-- Process: Design REST/GraphQL endpoints based on ERD entities and relationships.
-
-### Gen Frontend Component from ComponentContract
-Generate Frontend Component code from Component Contract specifications.
-- Source: Component Contract (typically in `/design/ComponentContract.md` or similar)
-- Output: `/frontend/components/`
-- Process: Generate React/React Native components based on contract specifications (props, state, behavior).
-
-## Workflow Guidelines
-
-1. Always check `/truth/TC.vX.md` before making assumptions
-2. When requirements are ambiguous, document in `/requirements/SRS.ambiguities.md`
-3. Maintain traceability using `origin:` and `derived-from:` tags
-4. Follow the command sequence: TC → SRS → BR → Flows → ERD → API → Components
+For detailed rules, see the individual files in `.cursor/rules/` directory.
 
